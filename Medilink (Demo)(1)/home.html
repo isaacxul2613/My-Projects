@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediLink – Home</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .home-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 0.8s ease forwards;
+    }
+    .home-hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .home-hero p {
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .role-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      width: 100%;
+      max-width: 800px;
+    }
+    .role-btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 30px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .role-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+    }
+    .admin-link {
+      margin-top: 50px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .admin-link a {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .admin-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+<header class="app-header">
+  <a href="home.html" class="brand" style="text-decoration:none; color:inherit;">
+    <img src="assets/logo.svg" alt="MediLink logo" class="logo" />
+    <div>
+      <h1 class="site-title">MediLink</h1>
+    </div>
+  </a>
+</header>
+
+    <main class="home-hero">
+      <h1>Welcome to MediLink</h1>
+      <p>
+        MediLink is Zimbabwe’s modern digital healthcare platform that bridges 
+        the gap between <strong>Doctors</strong>, <strong>Pharmacies</strong>, 
+        and <strong>Patients</strong> — enabling instant e-prescriptions, 
+        real-time stock availability, and transparent medicine pricing.
+      </p>
+
+      <div class="role-grid">
+        <button class="role-btn" onclick="goToLogin('doctor')">Doctor</button>
+        <button class="role-btn" onclick="goToLogin('pharmacy')">Pharmacist</button>
+        <button class="role-btn" onclick="goToLogin('patient')">Patient</button>
+      </div>
+
+      <div class="admin-link">
+        Are you an administrator? <a href="index.html?role=admin">Login as Admin</a>
+      </div>
+    </main>
+
+    <footer class="muted small-text" style="text-align:center; margin-top:60px;">
+      © 2025 MediLink Project – Chinhoyi University of Technology
+    </footer>
+  </div>
+
+  <script>
+    function goToLogin(role) {
+      window.location.href = `index.html?role=${role}`;
+    }
+  </script>
+</body>
+</html>
+
+

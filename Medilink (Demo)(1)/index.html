@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MediLink – Login</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="app center fade">
+    <header class="app-header">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="MediLink logo" class="logo" />
+        <div>
+          <h1 class="site-title">MediLink</h1>
+          <p class="tag">Connecting Doctors • Pharmacies • Patients</p>
+        </div>
+      </div>
+    </header>
+
+<main style="display: flex; justify-content: center;">
+  <div class="login-wrapper" style="position: relative;">
+    <a href="home.html" class="back-arrow" title="Back to Homepage">←</a>
+
+    <div class="login-container card">
+      <h2>Welcome to MediLink</h2>
+      <p class="muted">
+        A digital healthcare bridge for e-prescriptions, real-time stock, and transparent prices.
+      </p>
+
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="you@domain.test" required />
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••" required />
+        <label>Login as</label>
+        <select id="role">
+          <option value="doctor">Doctor</option>
+          <option value="pharmacy">Pharmacy</option>
+          <option value="patient">Patient</option>
+          <option value="admin">Admin</option>
+        </select>
+
+        <div class="btn-row">
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="button" class="btn btn-ghost" id="seedBtn">Seed Demo Data</button>
+        </div>
+      </form>
+
+      <div class="demo-info">
+        <h4>Demo Accounts</h4>
+        <ul>
+          <li><strong>Doctor:</strong> doc@medilink.test / doctor123</li>
+          <li><strong>Pharmacy:</strong> pharm@medilink.test / pharm123</li>
+          <li><strong>Patient:</strong> patient@medilink.test / patient123</li>
+          <li><strong>Admin:</strong> admin@medilink.test / admin123</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+    <footer class="muted small-text">
+      © 2025 MediLink Prototype – Chinhoyi University of Technology
+    </footer>
+  </div>
+
+  <script src="js/backend.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  const preRole = params.get("role");
+  if (preRole) {
+    document.getElementById("role").value = preRole;
+  }
+</script>
+
+</body>
+</html>
